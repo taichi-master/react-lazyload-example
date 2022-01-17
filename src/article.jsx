@@ -1,11 +1,11 @@
 import React from 'react'
 import { logLoading } from './logLoading'
 
-logLoading( 'component' )
+logLoading( 'article' )
 
-export default function Component () {
+export default function Article () {
   return (
-    <p className="component">
+    <p className="article">
       Lorem ipsum dolor sit amet consectetur adipisicing elit. Non facilis quisquam, voluptas numquam, officiis asperiores minima alias quia nihil qui culpa. Blanditiis necessitatibus nesciunt atque accusantium temporibus doloribus, sint odio?
       Eveniet, quos, molestias porro eos in dolor possimus nisi quam nostrum assumenda fugit, vero repellat. Alias quas, vel enim, doloribus nulla, odio incidunt autem rem adipisci fugit deserunt nemo aspernatur!
       Mollitia, dolore. Illo soluta voluptatem sit, labore nam placeat nobis quos quidem incidunt animi asperiores minus atque, necessitatibus iste exercitationem fuga culpa quasi iure porro explicabo eos! Alias, tempore vero!

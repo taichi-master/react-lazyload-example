@@ -1,6 +1,5 @@
 const path = require( 'path' ),
-      resolvePath = folder => path.resolve( __dirname, folder ),
-      webpack = require( 'webpack' )
+      resolvePath = folder => path.resolve( __dirname, folder )
 
 module.exports = {
   mode: 'development',
@@ -8,7 +7,6 @@ module.exports = {
   entry: {
     main: [
       resolvePath( 'src/main.jsx' )
-      // 'webpack-hot-middleware/client' // required for webpack-hot-middle only; will be added in server/index.js
     ]
   },
 

@@ -5,6 +5,8 @@
 ```bash
 checkout react-loadable
 ```
+You might got a warning in the console,
+Warning: componentWillMount has been renamed, and is not recommended for use.
 
 ## More info
 

@@ -1,33 +1,28 @@
 import React, { useState } from 'react'
-import Component from './component.jsx'
+import { Route, Routes } from 'react-router-dom'
+import Loadable from 'react-loadable'
+import Loading from './loading.jsx'
+import Home from './home.jsx'
+// import About from './about.jsx'
 import { logLoading } from './logLoading'
 
 logLoading( 'app' )
 
-import Loadable from 'react-loadable'
-import Loading from './loading.jsx'
-
-const LoadableComponent = Loadable( {
-  loader: _ => import( './lazy.jsx' ),
+const About = Loadable( {
+  loader: _ => import( './about.jsx' ),
   loading: Loading
 } )
 
 export function App () {
-
-  const [ isShow, setIsShow ] = useState( false )
-
-  function showMore ( e ) {
-    setIsShow( isShow => !isShow )
-  }
-
   return (
     <>
       <h1>React-Lazyload-Example</h1>
-      <Component/>
-      <button onClick={ showMore }>{ isShow ? `show less` : `show more` }</button>
-      {
-        isShow && <LoadableComponent/>
-      }
+      <main>
+        <Routes>
+          <Route path="/" element={ <Home /> } />
+          <Route path="/about" element={ <About /> } />
+        </Routes>
+      </main>
     </>
   )
 }

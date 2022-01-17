@@ -7,22 +7,26 @@
     "dev": "webpack serve"
   },
   "keywords": [
-    "React"
+    "react",
+    "webpack",
+    "react-loadable"
   ],
   "author": "taichi-master",
   "license": "ISC",
   "devDependencies": {
     "@babel/preset-react": "^7.16.7",
     "babel-loader": "^8.2.3",
-    "css-loader": "^5.2.7",
-    "style-loader": "^2.0.0",
-    "webpack": "^4.44.2",
+    "css-loader": "^6.5.1",
+    "style-loader": "^3.3.1",
+    "webpack": "^5.66.0",
     "webpack-cli": "^4.9.1",
     "webpack-dev-server": "^4.7.3"
   },
   "dependencies": {
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
-    "react-loadable": "^5.5.0"
+    "react-loadable": "^5.5.0",
+    "react-router": "^6.2.1",
+    "react-router-dom": "^6.2.1"
   }
 }
