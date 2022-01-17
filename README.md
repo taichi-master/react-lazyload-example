@@ -1,5 +1,5 @@
 # React Lazy Loading Example
-### Three branchs availalbe.  They are react-loadable, @loadable/components and react.lazy.
+### Three branchs availalbe.  They are @loadable/components, react.lazy and react-loadable.
 
 ### using react-loadable
 ```bash
@@ -10,4 +10,4 @@ Warning: componentWillMount has been renamed, and is not recommended for use.
 
 ## More info
 
-[react/issues/16604](https://github.com/facebook/react/issues/16604#issuecomment-528663101)
+[react-loadable](https://github.com/jamiebuilds/react-loadable)

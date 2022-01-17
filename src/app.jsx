@@ -13,7 +13,7 @@ const About = Loadable( {
   loading: Loading
 } )
 
-export function App () {
+export default function App () {
   return (
     <>
       <h1>React-Lazyload-Example</h1>
