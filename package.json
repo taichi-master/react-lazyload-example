@@ -1,0 +1,28 @@
+{
+  "name": "react-lazyload-example",
+  "version": "1.0.0",
+  "description": "React Lazy Loading Example",
+  "main": "index.js",
+  "scripts": {
+    "dev": "webpack serve"
+  },
+  "keywords": [
+    "React"
+  ],
+  "author": "taichi-master",
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/preset-react": "^7.16.7",
+    "babel-loader": "^8.2.3",
+    "css-loader": "^5.2.7",
+    "style-loader": "^2.0.0",
+    "webpack": "^4.44.2",
+    "webpack-cli": "^4.9.1",
+    "webpack-dev-server": "^4.7.3"
+  },
+  "dependencies": {
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "react-loadable": "^5.5.0"
+  }
+}

@@ -1,0 +1,11 @@
+body {
+  background-color: lightblue;
+}
+
+.component {
+  background-color: lightblue;
+}
+
+.lazy {
+  background-color: lightyellow;
+}
