@@ -14,7 +14,7 @@ const path = require( 'path' ),
 const React = require( 'react' ),
       ReactDOMServer = require( 'react-dom/server' ),
       { StaticRouter } = require( 'react-router-dom/server' ),
-      App = require( resolvePath( 'lib/app.js' ) ).default
+      App = require( resolvePath( 'libs/app.js' ) ).default
 
 app.use( require( 'webpack-dev-middleware' )( compiler, {
   publicPath: webpackConfig.output.publicPath,

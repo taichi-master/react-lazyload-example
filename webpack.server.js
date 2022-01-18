@@ -19,7 +19,7 @@ module.exports = {
   },
 
   output: {
-    path: resolvePath( 'server/lib' ),
+    path: resolvePath( 'server/libs' ),
     filename: '[name].js',
     libraryTarget: 'commonjs2'
 },
