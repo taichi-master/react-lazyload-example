@@ -35,4 +35,6 @@ Warning: componentWillMount has been renamed, and is not recommended for use.
 
 ## More info
 
+[@loadable/component](https://loadable-components.com)
+[react.lazy](https://reactjs.org/docs/code-splitting.html)
 [react-loadable](https://github.com/jamiebuilds/react-loadable)
