@@ -20,7 +20,6 @@ const getConfig = ( target ) => ( {
   externals: target === 'web' ? undefined : [
     'react',
     'react-dom',
-    'react-loadable',
     'react-router',
     'react-router-dom'
   ],

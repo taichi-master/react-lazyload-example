@@ -1,11 +1,12 @@
 body {
+  padding: 1em;
   background-color: lightblue;
 }
 
-.about {
-  background-color: lightgreen;
+.about, .about button  {
+  font-style: italic;
 }
 
 .lazy {
-  background-color: lightyellow;
+  font-style: italic;
 }
