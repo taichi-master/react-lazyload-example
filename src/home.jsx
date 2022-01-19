@@ -1,16 +1,12 @@
-import React, { useState } from 'react'
+import React, { useState, Suspense } from 'react'
 import { Link } from 'react-router-dom'
 import Article from './article.jsx'
-import Loadable from 'react-loadable'
 import Loading from './loading.jsx'
 import { logLoading } from './logLoading'
 
 logLoading( 'home' )
 
-const LoadableComponent = Loadable( {
-  loader: _ => import( './lazy.jsx' ),
-  loading: Loading
-} )
+const LoadableComponent = React.lazy( _ => import( './lazy.jsx' ) )
 
 export default function Home () {
   const [ isShow, setIsShow ] = useState( false )
@@ -28,7 +24,11 @@ export default function Home () {
       <Article/>
       <button onClick={ showMore }>{ isShow ? `show less` : `show more` }</button>
       {
-        isShow && <LoadableComponent/>
+        isShow && (
+          <Suspense fallback={ <Loading/> }>
+            <LoadableComponent/>
+          </Suspense>
+        )
       }
     </div>
   )

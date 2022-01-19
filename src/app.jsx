@@ -1,6 +1,5 @@
-import React, { useState } from 'react'
+import React, { useState, Suspense } from 'react'
 import { Route, Routes } from 'react-router-dom'
-import Loadable from 'react-loadable'
 import Loading from './loading.jsx'
 import Home from './home.jsx'
 // import About from './about.jsx'
@@ -8,10 +7,7 @@ import { logLoading } from './logLoading'
 
 logLoading( 'app' )
 
-const About = Loadable( {
-  loader: _ => import( './about.jsx' ),
-  loading: Loading
-} )
+const About = React.lazy( _ => import( './about.jsx' ) )
 
 export default function App () {
   return (
@@ -20,7 +16,11 @@ export default function App () {
       <main>
         <Routes>
           <Route path="/" element={ <Home /> } />
-          <Route path="/about" element={ <About /> } />
+          <Route path="/about" element={ 
+            <Suspense fallback={ <Loading/> } >
+              <About /> 
+            </Suspense>
+          } />
         </Routes>
       </main>
     </>
