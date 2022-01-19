@@ -4,7 +4,7 @@ const express = require( 'express' ),
       port = 3000
 
 const webpack = require( 'webpack' ),
-      webpackConfig = require( '../webpack.config.js' )
+      webpackConfig = require( '../webpack.web.js' )
 
 const compiler = webpack( webpackConfig )
 
@@ -15,7 +15,7 @@ const React = require( 'react' ),
       ReactDOMServer = require( 'react-dom/server' ),
       { StaticRouter } = require( 'react-router-dom/server' ),
       Loadable = require( 'react-loadable' ),
-      App = require( resolvePath( 'libs/app.js' ) ).default
+      App = require( resolvePath( 'libs/main.js' ) ).default
 
 app.use( require( 'webpack-dev-middleware' )( compiler, {
   publicPath: webpackConfig.output.publicPath,

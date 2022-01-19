@@ -1,22 +1,29 @@
 const path = require( 'path' ),
       resolvePath = folder => path.resolve( __dirname, folder )
 
-      module.exports = {
+const getConfig = ( target ) => ( {
   mode: 'development',
 
   devtool: 'inline-source-map',
 
-  entry: {
-    main: [
-      resolvePath( 'src/main.jsx' )
-    ]
-  },
+  target,
+
+  entry: resolvePath( target === 'web' ? 'src/main.jsx' : 'src/app.jsx' ),
 
   output: {
-    path: resolvePath( 'public' ),
-    publicPath: '/js',
-    filename: 'bundle.js'
+    path: resolvePath( target === 'web' ? 'public' : 'server/libs' ),
+    publicPath: target === 'web' ? '/js' : undefined,
+    filename: target === 'web' ? 'bundle.js' : '[name].js',
+    libraryTarget: target === 'web' ? undefined : 'commonjs2'
   },
+
+  externals: target === 'web' ? undefined : [
+    'react',
+    'react-dom',
+    'react-loadable',
+    'react-router',
+    'react-router-dom'
+  ],
 
   devServer: {
     static: resolvePath( 'public' ),
@@ -46,4 +53,6 @@ const path = require( 'path' ),
   },
   plugins: [
   ]
-}
+} )
+
+module.exports = [ getConfig( 'web' ), getConfig( 'node' ) ]
