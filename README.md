@@ -12,7 +12,13 @@ curl http://localhost:3000/about
 ```
 FYI, the "about" page is a lazy load commponent, but the content would still be shown with the curl command.
 
-### Three branchs availalbe.  They are @loadable/components, react.lazy and react-loadable.
+### Three branchs are availalbe.  They are @loadable/components, react.lazy and react-loadable.
+
+### using react.lazy
+```bash
+checkout react.lazy
+```
+No SSR for react.lazy.
 
 ### using react-loadable
 ```bash
