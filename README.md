@@ -16,17 +16,20 @@ FYI, Although the "about" page is a lazy loadable commponent, the content would 
 
 ### using @loadable/components
 ```bash
+git pull origin @loadable/component
 git checkout @loadable/components
 ```
 
 ### using react.lazy
 ```bash
+git pull origin react.lazy
 git checkout react.lazy
 ```
-No SSR for react.lazy.
+No SSR support for react.lazy yet.
 
 ### using react-loadable
 ```bash
+git pull origin react-loadable
 git checkout react-loadable
 ```
 You might got a warning in the console,
