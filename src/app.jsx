@@ -8,7 +8,7 @@ import { logLoading } from './logLoading'
 
 logLoading( 'app' )
 
-const About = loadable( _ => import( './about.jsx' ) )
+const About = loadable( _ => import( './about.jsx' ), { fallback: <Loading/> } )
 
 export default function App () {
   return (
@@ -16,12 +16,8 @@ export default function App () {
       <h1>React-Lazyload-Example</h1>
       <main>
         <Routes>
-          <Route path="/" element={ <Home /> } />
-          <Route path="/about" element={ 
-            <Suspense fallback={ <Loading/> } >
-              <About /> 
-            </Suspense>
-          } />
+          <Route path="/" element={ <Home/> } />
+          <Route path="/about" element={ <About/> } />
         </Routes>
       </main>
     </>

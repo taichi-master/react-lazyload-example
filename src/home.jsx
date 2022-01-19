@@ -7,7 +7,7 @@ import { logLoading } from './logLoading'
 
 logLoading( 'home' )
 
-const LoadableComponent = loadable( _ => import( './lazy.jsx' ) )
+const LoadableComponent = loadable( _ => import( './lazy.jsx' ), { fallback: <Loading/> } )
 
 export default function Home () {
   const [ isShow, setIsShow ] = useState( false )
@@ -25,11 +25,7 @@ export default function Home () {
       <Article/>
       <button onClick={ showMore }>{ isShow ? `show less` : `show more` }</button>
       {
-        isShow && (
-          <Suspense fallback={ <Loading/> }>
-            <LoadableComponent/>
-          </Suspense>
-        )
+        isShow && <LoadableComponent/>
       }
     </div>
   )
