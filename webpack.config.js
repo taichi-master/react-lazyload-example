@@ -20,7 +20,7 @@ const getConfig = ( target ) => ( {
   externals: target === 'web' ? undefined : [
     'react',
     'react-dom',
-    'react-loadable',
+    '@loadable/component',
     'react-router',
     'react-router-dom'
   ],

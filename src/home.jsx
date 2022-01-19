@@ -1,12 +1,13 @@
 import React, { useState, Suspense } from 'react'
 import { Link } from 'react-router-dom'
+import loadable from '@loadable/component'
 import Article from './article.jsx'
 import Loading from './loading.jsx'
 import { logLoading } from './logLoading'
 
 logLoading( 'home' )
 
-const LoadableComponent = React.lazy( _ => import( './lazy.jsx' ) )
+const LoadableComponent = loadable( _ => import( './lazy.jsx' ) )
 
 export default function Home () {
   const [ isShow, setIsShow ] = useState( false )
