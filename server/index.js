@@ -11,6 +11,10 @@ const compiler = webpack( webpackConfig )
 const path = require( 'path' ),
       resolvePath = folder => path.resolve( __dirname, folder )
 
+const { ChunkExtractor } = require( '@loadable/server' ),
+      statsFile = resolvePath( 'libs/loadable-stats.json' ),
+      extractor = new ChunkExtractor({ statsFile })
+
 const React = require( 'react' ),
       ReactDOMServer = require( 'react-dom/server' ),
       { StaticRouter } = require( 'react-router-dom/server' ),
@@ -23,7 +27,9 @@ app.use( require( 'webpack-dev-middleware' )( compiler, {
 app.get( '*', function ( req, res ) {
   const appHtml = ReactDOMServer.renderToString(
     React.createElement( StaticRouter, { location: req.url, context: {} },
+      extractor.collectChunks(
       React.createElement( App )
+      )
     )
   )
   const str = ejs.renderFile( path.resolve( __dirname, '../public/index.html' ), { appHtml }, null, function( err, str ) {

@@ -1,5 +1,6 @@
 const path = require( 'path' ),
       resolvePath = folder => path.resolve( __dirname, folder )
+      LoadablePlugin = require('@loadable/webpack-plugin')
 
 const getConfig = ( target ) => ( {
   mode: 'development',
@@ -52,6 +53,7 @@ const getConfig = ( target ) => ( {
     ]
   },
   plugins: [
+    new LoadablePlugin()
   ]
 } )
 
