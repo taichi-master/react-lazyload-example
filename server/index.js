@@ -28,7 +28,7 @@ app.get( '*', function ( req, res ) {
   const appHtml = ReactDOMServer.renderToString(
     React.createElement( StaticRouter, { location: req.url, context: {} },
       extractor.collectChunks(
-      React.createElement( App )
+        React.createElement( App )
       )
     )
   )

@@ -1,5 +1,5 @@
 const path = require( 'path' ),
-      resolvePath = folder => path.resolve( __dirname, folder )
+      resolvePath = folder => path.resolve( __dirname, folder ),
       LoadablePlugin = require('@loadable/webpack-plugin')
 
 const getConfig = ( target ) => ( {
