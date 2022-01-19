@@ -1,8 +1,10 @@
 const path = require( 'path' ),
       resolvePath = folder => path.resolve( __dirname, folder )
 
-module.exports = {
+      module.exports = {
   mode: 'development',
+
+  devtool: 'inline-source-map',
 
   entry: {
     main: [
