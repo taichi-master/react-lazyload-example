@@ -14,6 +14,7 @@ const path = require( 'path' ),
 const React = require( 'react' ),
       ReactDOMServer = require( 'react-dom/server' ),
       { StaticRouter } = require( 'react-router-dom/server' ),
+      Loadable = require( 'react-loadable' ),
       App = require( resolvePath( 'libs/app.js' ) ).default
 
 app.use( require( 'webpack-dev-middleware' )( compiler, {
@@ -31,6 +32,8 @@ app.get( '*', function ( req, res ) {
   } )
 } )
 
-app.listen( port, function () {
-  console.log( `🚀 listening at  ${port}` )
+Loadable.preloadAll().then( function() {
+  app.listen( port, function () {
+    console.log( `🚀 listening at  ${port}` )
+  } )
 } )
