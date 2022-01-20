@@ -32,7 +32,7 @@ app.get( '*', function ( req, res ) {
       )
     )
   )
-  const str = ejs.renderFile( path.resolve( __dirname, '../public/index.html' ), { appHtml }, null, function( err, str ) {
+  ejs.renderFile( path.resolve( __dirname, '../public/index.html' ), { appHtml }, null, function( err, str ) {
     res.send( str )  
   } )
 } )
