@@ -20,13 +20,15 @@ app.use( require( 'webpack-dev-middleware' )( compiler, {
   publicPath: webpackConfig.output.publicPath,
   stats: { colors: true }
 } ) )
+
 app.get( '*', function ( req, res ) {
   const appHtml = ReactDOMServer.renderToString(
     React.createElement( StaticRouter, { location: req.url, context: {} },
       React.createElement( App )
     )
   )
-  const str = ejs.renderFile( path.resolve( __dirname, '../public/index.html' ), { appHtml }, null, function( err, str ) {
+
+  ejs.renderFile( resolvePath( '../public/index.html' ), { appHtml }, null, function( err, str ) {
     res.send( str )  
   } )
 } )
